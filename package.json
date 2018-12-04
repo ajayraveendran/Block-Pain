@@ -1,0 +1,22 @@
+{
+  "name": "block-pain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "browser-sync start --watch --server --directory",
+    "dev": "npm run serve"
+  },
+  "prettier": {
+    "printWidth": 100
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajayraveendran/Block-Pain.git"
+  },
+  "author": "Ajay",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.7"
+  }
+}
