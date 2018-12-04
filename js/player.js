@@ -21,7 +21,13 @@ export default class Player {
       frameRate: 12,
       repeat: -1
     });
-
+    anims.create({
+      key: "player-dead",
+      frames: anims.generateFrameNumbers("player", { start: 19, end: 16 }),
+      frameRate: 18,
+      repeat: -1
+    });
+    
     // Create the physics-based sprite that we will move around and animate
     this.sprite = scene.physics.add
       .sprite(x, y, "player", 0)

@@ -18,7 +18,7 @@ export default class PlatformerScene extends Phaser.Scene {
     );
     this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
     this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("map", "../assets/tilemaps/platformer1.json");
+    this.load.tilemapTiledJSON("map", `../assets/tilemaps/platformer${Math.floor(Math.random() * (2 - 0 + 1)) + 0}.json`);
   }
 
   create() {
@@ -66,14 +66,14 @@ export default class PlatformerScene extends Phaser.Scene {
     // this.marker = new MouseTileMarker(this, map);
 
     // Help text that has a "fixed" position on the screen
-    this.add
-      .text(16, 16, "Arrow/WASD to move & jump\nLeft click to draw platforms", {
-        font: "18px monospace",
-        fill: "#000000",
-        padding: { x: 20, y: 10 },
-        backgroundColor: "#ffffff"
-      })
-      .setScrollFactor(0);
+    // this.add
+    //   .text(16, 16, "Arrow/WASD to move & jump\nLeft click to draw platforms", {
+    //     font: "18px monospace",
+    //     fill: "#000000",
+    //     padding: { x: 20, y: 10 },
+    //     backgroundColor: "#ffffff"
+    //   })
+    //   .setScrollFactor(0);
   }
 
   update(time, delta) {
@@ -100,6 +100,7 @@ export default class PlatformerScene extends Phaser.Scene {
       const cam = this.cameras.main;
       cam.shake(100, 0.01);
       cam.fade(250, 0, 0, 0);
+
 
       // Freeze the player to leave them on screen while fading but remove the marker immediately
       this.player.freeze();
