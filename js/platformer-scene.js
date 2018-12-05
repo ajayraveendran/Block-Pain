@@ -17,8 +17,9 @@ export default class PlatformerScene extends Phaser.Scene {
       }
     );
     this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
+    this.load.image("beacon", "../assets/images/0x72-industrial-beacon.png");
     this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("map", `../assets/tilemaps/platformer${Math.floor(Math.random() * (2 - 0 + 1)) + 0}.json`);
+    this.load.tilemapTiledJSON("map", `../assets/tilemaps/platformer${Math.floor(Math.random() * (4 - 0 + 1)) + 0}.json`);
   }
 
   create() {
@@ -59,7 +60,7 @@ export default class PlatformerScene extends Phaser.Scene {
         this.groundLayer.removeTileAt(tile.x, tile.y);
       }
     });
-
+    this.beacon = this.physics.add.staticGroup()
     this.cameras.main.startFollow(this.player.sprite);
     this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 

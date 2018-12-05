@@ -52,6 +52,7 @@ export default class Player {
     this.sprite.body.moves = false;
   }
 
+
   update() {
     const { keys, sprite } = this;
     const onGround = sprite.body.blocked.down;
