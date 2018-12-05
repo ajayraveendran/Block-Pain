@@ -16,8 +16,8 @@ export default class PlatformerScene extends Phaser.Scene {
         spacing: 2
       }
     );
+
     this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("beacon", "../assets/images/0x72-industrial-beacon.png");
     this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
     this.load.tilemapTiledJSON("map", `../assets/tilemaps/platformer${Math.floor(Math.random() * (4 - 0 + 1)) + 0}.json`);
   }
@@ -59,24 +59,35 @@ export default class PlatformerScene extends Phaser.Scene {
 
         this.groundLayer.removeTileAt(tile.x, tile.y);
       }
-    });
-    this.beacon = this.physics.add.staticGroup()
-    this.cameras.main.startFollow(this.player.sprite);
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-    // this.marker = new MouseTileMarker(this, map);
+      this.groundLayer.setTileIndexCallback(317, () => {
+        this.groundLayer.setTileIndexCallback(317, null)
+        this.player.freeze();
+        const cam = this.cameras.main;
+        cam.fade(250, 0, 0, 0);
+        cam.once("camerafadeoutcomplete", () => {
+          this.player.destroy();
+          this.scene.start();
 
-    // Help text that has a "fixed" position on the screen
-    // this.add
-    //   .text(16, 16, "Arrow/WASD to move & jump\nLeft click to draw platforms", {
-    //     font: "18px monospace",
-    //     fill: "#000000",
-    //     padding: { x: 20, y: 10 },
-    //     backgroundColor: "#ffffff"
-    //   })
-    //   .setScrollFactor(0);
+        })
+      });
+
+      this.cameras.main.startFollow(this.player.sprite);
+      this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+      // this.marker = new MouseTileMarker(this, map);
+
+      // Help text that has a "fixed" position on the screen
+      // this.add
+      //   .text(16, 16, "Arrow/WASD to move & jump\nLeft click to draw platforms", {
+      //     font: "18px monospace",
+      //     fill: "#000000",
+      //     padding: { x: 20, y: 10 },
+      //     backgroundColor: "#ffffff"
+      //   })
+      //   .setScrollFactor(0);
+    })
   }
-
   update(time, delta) {
     if (this.isPlayerDead) return;
 
@@ -112,5 +123,6 @@ export default class PlatformerScene extends Phaser.Scene {
         this.scene.restart();
       });
     }
+    debugger
   }
 }
