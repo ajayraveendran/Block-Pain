@@ -32,8 +32,7 @@ export default class PlatformerScene extends Phaser.Scene {
     const spawnPoint = map.findObject("Objects", obj => obj.name === "Spawn Point");
     this.player = new Player(this, spawnPoint.x, spawnPoint.y);
 
-    // Collide the player against the ground layer - here we are grabbing the sprite property from
-    // the player (since the Player class is not a Phaser.Sprite).
+    // add collisions
     this.groundLayer.setCollisionByProperty({ collides: true });
     this.physics.world.addCollider(this.player.sprite, this.groundLayer);
 

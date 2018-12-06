@@ -1,8 +1,4 @@
-/**
- * A class that wraps up our 2D platforming player logic. It creates, animates and moves a sprite in
- * response to WASD/arrow keys. Call its update method from the scene's update and call its destroy
- * method when you're done with the player.
- */
+
 export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
@@ -21,14 +17,9 @@ export default class Player {
       frameRate: 12,
       repeat: -1
     });
-    // anims.create({
-    //   key: "player-dead",
-    //   frames: anims.generateFrameNumbers("player", { start: 19, end: 16 }),
-    //   frameRate: 18,
-    //   repeat: -1
-    // });
     
-    // Create the physics-based sprite that we will move around and animate
+    
+    // add physics
     this.sprite = scene.physics.add
       .sprite(x, y, "player", 0)
       .setDrag(1000, 0)
@@ -36,7 +27,7 @@ export default class Player {
       .setSize(18, 24)
       .setOffset(7, 9);
 
-    // Track the arrow keys & WASD
+    // add key inputs
     const { LEFT, RIGHT, UP, W, A, D } = Phaser.Input.Keyboard.KeyCodes;
     this.keys = scene.input.keyboard.addKeys({
       left: LEFT,
@@ -47,7 +38,7 @@ export default class Player {
       d: D
     });
   }
-
+  // freeze functionality
   freeze() {
     this.sprite.body.moves = false;
   }
@@ -58,11 +49,11 @@ export default class Player {
     const onGround = sprite.body.blocked.down;
     const acceleration = onGround ? 600 : 200;
 
-    // Apply horizontal acceleration when left/a or right/d are applied
+    
     if (keys.left.isDown || keys.a.isDown) {
       sprite.setAccelerationX(-acceleration);
-      // No need to have a separate set of graphics for running to the left & to the right. Instead
-      // we can just mirror the sprite.
+      
+      // mirror sprite for movemements in opposite directions
       sprite.setFlipX(true);
     } else if (keys.right.isDown || keys.d.isDown) {
       sprite.setAccelerationX(acceleration);
