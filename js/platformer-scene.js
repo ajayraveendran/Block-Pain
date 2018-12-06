@@ -1,9 +1,5 @@
 import Player from "./player.js";
-// import MouseTileMarker from "./mouse-tile-maker.js";
 
-/**
- * A class that extends Phaser.Scene and wraps up the core logic for the platformer level.
- */
 export default class PlatformerScene extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
@@ -32,7 +28,7 @@ export default class PlatformerScene extends Phaser.Scene {
     this.groundLayer = map.createDynamicLayer("Ground", tiles);
     map.createDynamicLayer("Foreground", tiles);
 
-    // Instantiate a player instance at the location of the "Spawn Point" object in the Tiled map
+    // create player at spawn point
     const spawnPoint = map.findObject("Objects", obj => obj.name === "Spawn Point");
     this.player = new Player(this, spawnPoint.x, spawnPoint.y);
 
@@ -74,33 +70,12 @@ export default class PlatformerScene extends Phaser.Scene {
 
       this.cameras.main.startFollow(this.player.sprite);
       this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-
-      // this.marker = new MouseTileMarker(this, map);
-
-      // Help text that has a "fixed" position on the screen
-      // this.add
-      //   .text(16, 16, "Arrow/WASD to move & jump\nLeft click to draw platforms", {
-      //     font: "18px monospace",
-      //     fill: "#000000",
-      //     padding: { x: 20, y: 10 },
-      //     backgroundColor: "#ffffff"
-      //   })
-      //   .setScrollFactor(0);
     })
   }
-  update(time, delta) {
+  update() {
     if (this.isPlayerDead) return;
 
-    // this.marker.update();
     this.player.update();
-
-    // Add a colliding tile at the mouse position
-    const pointer = this.input.activePointer;
-    const worldPoint = pointer.positionToCamera(this.cameras.main);
-    if (pointer.isDown) {
-      const tile = this.groundLayer.putTileAtWorldXY(6, worldPoint.x, worldPoint.y);
-      tile.setCollision(true);
-    }
 
     if (
       this.player.sprite.y > this.groundLayer.height ||
@@ -108,15 +83,12 @@ export default class PlatformerScene extends Phaser.Scene {
     ) {
       // Flag that the player is dead so that we can stop update from running in the future
       this.isPlayerDead = true;
-
       const cam = this.cameras.main;
       cam.shake(100, 0.01);
       cam.fade(250, 0, 0, 0);
 
-
-      // Freeze the player to leave them on screen while fading but remove the marker immediately
+      // Freeze the player to leave them on screen while fading
       this.player.freeze();
-      // this.marker.destroy();
 
       cam.once("camerafadeoutcomplete", () => {
         this.player.destroy();
