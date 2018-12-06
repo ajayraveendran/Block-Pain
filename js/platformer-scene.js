@@ -94,6 +94,5 @@ export default class PlatformerScene extends Phaser.Scene {
         this.scene.restart();
       });
     }
-    debugger
   }
 }
