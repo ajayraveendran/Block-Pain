@@ -10,7 +10,7 @@ export default class PlatformerScene0 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "../Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -19,9 +19,9 @@ export default class PlatformerScene0 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer0", "../../assets/tilemaps/platformer0.json");
+    this.load.image("spike", "../Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "../Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer0", "../../Block-Pain/assets/tilemaps/platformer0.json");
   }
   
   create() {
