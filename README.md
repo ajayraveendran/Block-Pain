@@ -1,7 +1,7 @@
 # Block-Pain
 
 
-A platformer game to help teach me the basics of HTML5 game development. The objective is to avoid falling or hitting any of the spikes. The game has 5 levels which aren't chronological. If you're unlucky you might get the hardest level first!
+A platformer game to help teach me the basics of HTML5 game development. The objective is to avoid falling or hitting any of the spikes. The game has 5 levels which increase in difficulty as you progress. 
 
 ![Screenshot](https://raw.githubusercontent.com/ajayraveendran/Block-Pain/master/assets/images/Screen%20Shot.png)
 
@@ -34,5 +34,5 @@ DT our instructor says, projects are never finished, only abandoned. This even t
 
 ### Credits
 
-This project would not have been possible without the awesome tutorials from [Mike Westhad](www.mikewesthad.com)
-Mike's used Robert's tileset in his tutorial. Here's a link if any of you are interested [0x72 Industrial](https://0x72.itch.io/16x16-industrial-tileset)
+This project would not have been possible without the awesome tutorials from [Mike Westhad](www.mikewesthad.com).
+Mike used Robert's tileset in his tutorial. Here's a link if any of you are interested [0x72 Industrial](https://0x72.itch.io/16x16-industrial-tileset)
