@@ -214,7 +214,7 @@ class PlatformerScene0 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -223,9 +223,9 @@ class PlatformerScene0 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer0", "../../assets/tilemaps/platformer0.json");
+    this.load.image("spike", "Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer0", "../Block-Pain/assets/tilemaps/platformer0.json");
   }
   
   create() {
@@ -328,7 +328,7 @@ class PlatformerScene1 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -337,9 +337,9 @@ class PlatformerScene1 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer1", "../../assets/tilemaps/platformer1.json");
+    this.load.image("spike", "Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer1", "../Block-Pain/assets/tilemaps/platformer1.json");
   }
   
   create() {
@@ -442,7 +442,7 @@ class PlatformerScene2 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -451,9 +451,9 @@ class PlatformerScene2 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer2", "../../assets/tilemaps/platformer2.json");
+    this.load.image("spike", "Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer2", "../Block-Pain/assets/tilemaps/platformer2.json");
   }
   
   create() {
@@ -556,7 +556,7 @@ class PlatformerScene3 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -565,9 +565,9 @@ class PlatformerScene3 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer3", "../../assets/tilemaps/platformer3.json");
+    this.load.image("spike", "Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer3", "../Block-Pain/assets/tilemaps/platformer3.json");
   }
   
   create() {
@@ -670,7 +670,7 @@ class PlatformerScene4 extends Phaser.Scene {
   preload() {
     this.load.spritesheet(
       "player",
-      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -679,9 +679,9 @@ class PlatformerScene4 extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer4", "../../assets/tilemaps/platformer4.json");
+    this.load.image("spike", "Block-Pain/assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer4", "../Block-Pain/assets/tilemaps/platformer4.json");
   }
   
   create() {
