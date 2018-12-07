@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start --watch --server --directory",
-    "dev": "npm run serve"
+    "build": "webpack",
+    "start": "npm run build && webpack-dev-server --port=8000"
   },
   "prettier": {
     "printWidth": 100
@@ -17,6 +17,8 @@
   "author": "Ajay",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.24.7"
+    "webpack-dev-server": "^2.11.0",
+    "webpack": "^3.4.1",
+    "raw-loader": "^0.5.1"
   }
 }

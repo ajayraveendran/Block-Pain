@@ -28,11 +28,11 @@ export default class Player {
       .setOffset(7, 9);
 
     // add key inputs
-    const { LEFT, RIGHT, UP, W, A, D } = Phaser.Input.Keyboard.KeyCodes;
+    const { LEFT, RIGHT, SPACE, W, A, D } = Phaser.Input.Keyboard.KeyCodes;
     this.keys = scene.input.keyboard.addKeys({
       left: LEFT,
       right: RIGHT,
-      up: UP,
+      up: SPACE,
       w: W,
       a: A,
       d: D

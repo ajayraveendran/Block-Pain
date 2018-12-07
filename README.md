@@ -7,8 +7,6 @@ A platformer game to help teach me the basics of HTML5 game development. The obj
 
 [Play](https://ajayraveendran.github.io/Block-Pain/)
 
-There is an issue where I can't get to reload a new level when you finish it. Refresh the page to access a new level.
-
 ### Movements
 
 Use the up, down , left and right arrow keys to move the player. The character has momentum physics built in i.e. it'll build up speed from stand still, until it reaches max velocity.

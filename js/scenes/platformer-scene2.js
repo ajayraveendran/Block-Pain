@@ -1,10 +1,16 @@
-import Player from "./player.js";
+import Player from "../player.js";
 
-export default class PlatformerScene extends Phaser.Scene {
+export default class PlatformerScene2 extends Phaser.Scene {
+    
+  constructor ()
+  {
+      super({ key: 'PlatformerScene2' });
+  }
+
   preload() {
     this.load.spritesheet(
       "player",
-      "../Block-Pain/assets/spritesheets/0x72-industrial-player-32px-extruded.png",
+      "../assets/spritesheets/0x72-industrial-player-32px-extruded.png",
       {
         frameWidth: 32,
         frameHeight: 32,
@@ -13,15 +19,15 @@ export default class PlatformerScene extends Phaser.Scene {
       }
     );
 
-    this.load.image("spike", "../Block-Pain/assets/images/0x72-industrial-spike.png");
-    this.load.image("tiles", "../Block-Pain/assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("map", `../Block-Pain/assets/tilemaps/platformer${Math.floor(Math.random() * (4 - 0 + 1)) + 0}.json`);
+    this.load.image("spike", "../assets/images/0x72-industrial-spike.png");
+    this.load.image("tiles", "../assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
+    this.load.tilemapTiledJSON("platformer2", "../../assets/tilemaps/platformer2.json");
   }
-
+  
   create() {
     this.isPlayerDead = false;
 
-    const map = this.make.tilemap({ key: "map" });
+    const map = this.make.tilemap({ key: "platformer2" });
     const tiles = map.addTilesetImage("0x72-industrial-tileset-32px-extruded", "tiles");
 
     map.createDynamicLayer("Background", tiles);
@@ -62,7 +68,7 @@ export default class PlatformerScene extends Phaser.Scene {
         cam.fade(250, 0, 0, 0);
         cam.once("camerafadeoutcomplete", () => {
           this.player.destroy();
-          this.scene.start();
+          this.scene.start('PlatformerScene3');
 
         })
       });
