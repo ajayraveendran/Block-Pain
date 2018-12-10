@@ -9,7 +9,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'build'),
-        publicPath: '/build/',
+        publicPath: '/Block-Pain/',
         filename: 'block-pain.bundle.js'
     },
 

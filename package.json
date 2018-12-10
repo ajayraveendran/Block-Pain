@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "deploy": "gh-pages -d build",
     "start": "npm run build && webpack-dev-server --port=8000"
   },
   "prettier": {
@@ -17,8 +18,9 @@
   "author": "Ajay",
   "license": "ISC",
   "devDependencies": {
-    "webpack-dev-server": "^2.11.0",
+    "gh-pages": "^2.0.1",
+    "raw-loader": "^0.5.1",
     "webpack": "^3.4.1",
-    "raw-loader": "^0.5.1"
+    "webpack-dev-server": "^2.11.0"
   }
 }
