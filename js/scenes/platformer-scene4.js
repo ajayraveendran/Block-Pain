@@ -21,7 +21,7 @@ export default class PlatformerScene4 extends Phaser.Scene {
 
     this.load.image("spike", "assets/images/0x72-industrial-spike.png");
     this.load.image("tiles", "assets/tilesets/0x72-industrial-tileset-32px-extruded.png");
-    this.load.tilemapTiledJSON("platformer4", "../assets/tilemaps/platformer4.json");
+    this.load.tilemapTiledJSON("platformer4", "assets/tilemaps/platformer4.json");
   }
   
   create() {
