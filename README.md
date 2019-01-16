@@ -9,7 +9,7 @@ A platformer game to help teach me the basics of HTML5 game development. The obj
 
 ### Movements
 
-Use the up, down , left and right arrow keys to move the player. The character has momentum physics built in i.e. it'll build up speed from stand still, until it reaches max velocity.
+Use the LEFT and right arrow keys to move the player forwards or backwards and the SPACE key. The character has momentum physics built in i.e. it'll build up speed from stand still, until it reaches max velocity.
 
 ### Technologies used
 
